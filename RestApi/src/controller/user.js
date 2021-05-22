@@ -18,12 +18,16 @@ module.exports = {
         password: encryptPassword,
         role
       }
-      const check = await checkEmailModel(email)
+      if(email!==''&password!==''&role!==''&(role=='dosen'||role=='mahasiswa')){
+        const check = await checkEmailModel(email)
       if (check.length > 0) {
         return helper.response(response, 400, 'Email alredy used')
       } else {
         const result = await registerUserModel(data)
         return helper.response(response, 200, 'success', result)
+      }
+      }else{
+        return helper.response(response, 400, 'cek kembali inputan (role hanya mahasiswa dan dosen)')
       }
     } catch (error) {
       return helper.response(response, 400, 'bad request', error)

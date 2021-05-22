@@ -7,4 +7,4 @@ const convertint = (x) =>{
     result = `${Math.floor(jam)} Jam ${Math.floor(menit)} Menit ${Math.floor(detik)} Detik`
     console.log(result)
 }
-convertint(10000)
+convertint(20000)
