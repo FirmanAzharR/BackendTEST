@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "65e09dbb-4d0d-4181-9215-87c6e79eacc6",
+		"name": "NASTHA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "donny@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "donny",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "dosen",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "donny@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "donny",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "nilai",
+			"item": [
+				{
+					"name": "post nilai",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "NIM",
+									"value": "5150411155",
+									"type": "text"
+								},
+								{
+									"key": "ID_mata_kuliah",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "ID_dosen",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "nilai",
+									"value": "95",
+									"type": "text"
+								},
+								{
+									"key": "keterangan",
+									"value": "PASS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/nilai/post-nilai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"nilai",
+								"post-nilai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update nilai",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "NIM",
+									"value": "5150411153",
+									"type": "text"
+								},
+								{
+									"key": "ID_mata_kuliah",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nilai",
+									"value": "92",
+									"type": "text"
+								},
+								{
+									"key": "keterangan",
+									"value": "PASS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/nilai/update-nilai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"nilai",
+								"update-nilai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete nilai",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "NIM",
+									"value": "5150411153",
+									"type": "text"
+								},
+								{
+									"key": "ID_mata_kuliah",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/nilai/delete-nilai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"nilai",
+								"delete-nilai"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mahasiswa",
+			"item": [
+				{
+					"name": "get data mahasiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api1/mahasiswa?jurusan=informatika&dosen=Donny",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"mahasiswa"
+							],
+							"query": [
+								{
+									"key": "jurusan",
+									"value": "informatika"
+								},
+								{
+									"key": "dosen",
+									"value": "Donny"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rata nilai mahasiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api1/nilai/average-nilai-mhs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"nilai",
+								"average-nilai-mhs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rata nilai jurusan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE2OTQ1OTAsImV4cCI6MTYyMTcwNTM5MH0.rQLmDo16iz1UkkIkpU-MMCugUjeeimIjZqweNpnkB3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api1/nilai/average-nilai-jurusan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"nilai",
+								"average-nilai-jurusan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excel Post Mahasiswa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NSwiZW1haWwiOiJkb25ueUBnbWFpbC5jb20iLCJyb2xlIjoiZG9zZW4iLCJpYXQiOjE2MjE3MDYwNjAsImV4cCI6MTYyMTcxNjg2MH0.FcR27yzOJJvWXbiBfRGS60z3Ohho37vZI5XiCktID9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "excelFile",
+									"type": "file",
+									"src": "/E:/KULIAH/Node Js/nashta/RestApi/emptyExcel.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api1/mahasiswa/post-mhs-excel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api1",
+								"mahasiswa",
+								"post-mhs-excel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
