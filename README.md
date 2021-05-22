@@ -27,7 +27,7 @@ node app.js or npx nodemon
 ```
 ## Postman Documentation
 
-Postman documentation click [here]()
+Postman documentation click [here](https://documenter.getpostman.com/view/13758133/TzXtJL8Y)
 atau 
 Import File NASTHA.postman_collection.json dengan postman
 ## License
