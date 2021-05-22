@@ -1,0 +1,36 @@
+
+//1.buatlah sql untuk membuat database,table,dan kolom beserta tipe data
+//tabel user
+CREATE TABLE `test_be`.`user` ( `ID` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(100) NOT NULL , `password` VARCHAR(255) NOT NULL , `role` ENUM('mahasiswa','dosen') NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+//tabel mahasiswa
+CREATE TABLE `test_be`.`mahasiswa` ( `NIM` VARCHAR(50) NOT NULL , `nama` VARCHAR(100) NOT NULL , `alamat` VARCHAR(255) NOT NULL , `tanggal_lahir` DATE NOT NULL , `jurusan` VARCHAR(50) NOT NULL , PRIMARY KEY (`NIM`)) ENGINE = InnoDB;
+
+//tabel dosen
+CREATE TABLE `test_be`.`dosen` ( `ID` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(100) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+//tabel mata kuliah 
+CREATE TABLE `test_be`.`mata_kuliah` ( `ID` INT NOT NULL AUTO_INCREMENT , `nama_mata_kuliah` VARCHAR(100) NOT NULL , `NIM` VARCHAR(50) NOT NULL , PRIMARY KEY (`ID`) , FOREIGN KEY (`NIM`) REFERENCES mahasiswa(`NIM`)) ENGINE = InnoDB;
+
+//tabel nilai
+CREATE TABLE `test_be`.`data_nilai`(`NIM` VARCHAR(50) NOT NULL, `ID_mata_kuliah` INT NOT NULL, `ID_dosen` INT NOT NULL, `nilai` INT NOT NULL, `keterangan` VARCHAR(100) NOT NULL, FOREIGN KEY(`NIM`) REFERENCES mahasiswa(`NIM`), FOREIGN KEY(`ID_mata_kuliah`) REFERENCES mata_kuliah(`ID`) , FOREIGN KEY(`ID_dosen`) REFERENCES dosen(`ID`)) ENGINE = InnoDB;
+
+//2. Syntax sql insert beberapa data
+//insert user
+INSERT INTO `user` (`ID`, `email`, `password`, `role`) VALUES (NULL, 'firmanazhar@gmail.com', 'user1', 'mahasiswa')
+
+//insert mahasiswa
+INSERT INTO `mahasiswa` (`NIM`, `nama`, `alamat`, `tanggal_lahir`, `jurusan`) VALUES ('5150411154', 'Fian', 'Yogyakarta', '1996-05-04', 'Informatika'), ('5150411155', 'Suci', 'Yogyakarta', '1996-01-14', 'Informatika'),
+('5150411156', 'Rizky', 'Yogyakarta', '1996-11-12', 'Informatika')
+
+//insert dosen
+INSERT INTO `dosen` (`ID`, `nama`) VALUES (NULL, 'Donny')
+
+//insert mata_kuliah
+INSERT INTO `mata_kuliah` (`ID`, `nama_mata_kuliah`, `NIM`) VALUES (NULL, 'Kalkulus 1', '5150411153'), (NULL, 'Microprocesor', '5150411153')
+
+//insert Data Nilai
+INSERT INTO `data_nilai` (`NIM`, `ID_mata_kuliah`, `ID_dosen`, `nilai`, `keterangan`) VALUES ('5150411153', '1', '1', '85', 'PASS')
+
+//3.sql menampilkan semua data mahasaiswa, nilai < 70 secara decrement
+SELECT mahasiswa.NIM, mahasiswa.nama, mahasiswa.alamat, mahasiswa.tanggal_lahir, mahasiswa.jurusan, TIMESTAMPDIFF(YEAR, mahasiswa.tanggal_lahir, CURDATE()) as umur, dosen.nama, mata_kuliah.nama_mata_kuliah,data_nilai.nilai FROM mahasiswa INNER JOIN data_nilai ON mahasiswa.NIM=data_nilai.NIM INNER JOIN mata_kuliah ON mata_kuliah.ID=data_nilai.ID_mata_kuliah INNER JOIN dosen ON dosen.ID = data_nilai.ID_dosen WHERE data_nilai.nilai<70 ORDER BY(data_nilai.nilai) DESC
